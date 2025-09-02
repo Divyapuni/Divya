@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Researcher Coding Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            background: #f5f6fa; 
+            color: #222; 
+        }
+        header {
+            background: #3a7bd5;
+            color: #fff;
+            padding: 2rem 1rem 1rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 9px;
+            box-shadow: 0 2px 8px rgba(80,130,200,0.1);
+        }
+        .section-title {
+            color: #3a7bd5;
+            border-bottom: 2px solid #e0e7ef;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #fff;
+            box-shadow: 0 1px 6px rgba(60,120,200,0.1);
+        }
+        .about {
+            text-align: center;
+        }
+        .contact {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .contact a {
+            color: #3a7bd5;
+            text-decoration: none;
+        }
+        .skills, .projects, .publications, .code-examples {
+            margin-bottom: 2rem;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        .project, .publication, .code-snippet {
+            margin-bottom: 1.3rem;
+        }
+        .project-title, .pub-title {
+            font-weight: bold;
+            color: #244c7c;
+        }
+        .project-desc, .pub-desc {
+            margin: 0.2rem 0 0.3rem 0;
+        }
+        .code-snippet pre {
+            background: #f3f7fb;
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.98em;
+            border: 1px solid #e0e7ef;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Researcher Photo" class="profile-img">
+        <h1>Divya</h1>
+        <h3>Researcher &amp; Software Developer</h3>
+    </header>
+    <div class="container">
+
+        <section class="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a researcher passionate about computational methods in biology and the development of open-source scientific software. My work bridges the gap between biological research and efficient, reproducible code.
+            </p>
+        </section>
+
+        <section class="contact">
+            <span>Email: <a href="mailto:divya@university.edu">divya@university.edu</a></span> &nbsp;|&nbsp;
+            <span>GitHub: <a href="https://github.com/divya" target="_blank">divya</a></span> &nbsp;|&nbsp;
+            <span>LinkedIn: <a href="https://linkedin.com/in/divya" target="_blank">divya</a></span>
+        </section>
+
+        <section class="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <ul>
+                <li>Programming: Python, R, MATLAB, C++</li>
+                <li>Data Analysis: Pandas, NumPy, SciPy, Bioconductor</li>
+                <li>Machine Learning: scikit-learn, TensorFlow</li>
+                <li>Bioinformatics: Biopython, BEDTools, samtools</li>
+                <li>Reproducible Research: Jupyter, R Markdown, Docker</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="project">
+                <div class="project-title">GeneSeq Analyzer</div>
+                <div class="project-desc">
+                    An open-source Python toolkit for analyzing high-throughput sequencing data. 
+                </div>
+                <a href="https://github.com/divya/geneseq-analyzer" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <div class="project-title">Protein Structure Viewer</div>
+                <div class="project-desc">
+                    An interactive web app (built with Flask & D3.js) for visualizing protein structures in 3D.
+                </div>
+                <a href="https://github.com/divya/protein-structure-viewer" target="_blank">View on GitHub</a>
+            </div>
+        </section>
+
+        <section class="publications">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication">
+                <div class="pub-title">divya, A. et al. (2023). "Scalable Sequence Alignment Algorithms for Genomics", <i>Bioinformatics Journal</i>.</div>
+                <div class="pub-desc">
+                    Developed a novel parallel algorithm for aligning large-scale DNA sequences. <a href="#">[PDF]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">divya, A. &amp; Smith, B. (2022). "Interactive Tools for Protein Structure Analysis", <i>Computational Biology Letters</i>.</div>
+                <div class="pub-desc">
+                    Presented a new web-based visualization tool for researchers. <a href="#">[PDF]</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="code-examples">
+            <h2 class="section-title">Code Examples</h2>
+            <div class="code-snippet">
+                <div class="project-title">Python: FASTA File Parser</div>
+                <pre><code>def parse_fasta(filename):
+    with open(filename) as f:
+        seqs = {}
+        seq_name = ''
+        for line in f:
+            line = line.strip()
+            if line.startswith('&gt;'):
+                seq_name = line[1:]
+                seqs[seq_name] = ''
+            else:
+                seqs[seq_name] += line
+        return seqs
+</code></pre>
+            </div>
+            <div class="code-snippet">
+                <div class="project-title">R: Basic Data Plot</div>
+                <pre><code>data &lt;- read.csv("results.csv")
+plot(data$time, data$value, type="b", col="blue", 
+     xlab="Time", ylab="Value", main="Experiment Results")
+</code></pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
